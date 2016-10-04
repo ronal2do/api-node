@@ -1,0 +1,24 @@
+{
+  "name": "backend-stq",
+  "version": "1.0.0",
+  "description": "backend stq",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stq",
+    "node.js",
+    "api"
+  ],
+  "author": "Ronaldo Lima - stq",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.3",
+    "morgan": "^1.7.0"
+  }
+}
