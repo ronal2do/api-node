@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Pieces = new mongoose.Schema({
+var Pieces2 = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -22,4 +22,4 @@ var Pieces = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Pieces', Pieces);
+module.exports = mongoose.model('Pieces2', Pieces2);

@@ -1,5 +1,20 @@
 var mongoose = require('mongoose');
 
+var Pieces = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true,
+    },
+    file: {
+        type: String,
+        required: true
+    }
+});
+
 var Jobs = new mongoose.Schema({
     title: {
         type: String,
@@ -17,11 +32,8 @@ var Jobs = new mongoose.Schema({
         type: String,
         required: true
     },
-    pieces : [{ type : mongoose.Schema.Types.ObjectId, ref : 'Pieces'}],
-    date: {
-        type: Date,
-        default: Date.now
-    }
+    pieces : [Pieces]
 });
 
+module.exports = mongoose.model('Pieces', Pieces);
 module.exports = mongoose.model('Jobs', Jobs);
