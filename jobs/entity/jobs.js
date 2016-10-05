@@ -9,9 +9,15 @@ var Pieces = new mongoose.Schema({
         type: String,
         required: true,
     },
-    file: {
+    text: {
         type: String,
-        required: true
+        required: true,
+    },
+    file: {
+        type: String
+    },
+    classe: {
+        type: String
     }
 });
 
