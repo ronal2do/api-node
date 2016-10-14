@@ -9,8 +9,6 @@ var expressValidator = require('express-validator');
 var app        = express();
 var server     = http.createServer(app);
 
-// database
-require('./db');
 // middlewares
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,18 +17,13 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 // cors
 app.use(cors());
+// database
+require('./db');
 // add routes
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(req, res){
-    res.render('index.html');
-});
-
 require('./routes')(app);
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-app.use(bodyParser.json());
+// contact
+var contactController = require('./contact/services/create');
+app.post('/api/contact', contactController.contactPost);
 // fire up express
 server.listen(3001, function() {
    console.log('Express has been started');
